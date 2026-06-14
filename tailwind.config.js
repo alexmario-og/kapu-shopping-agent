@@ -1,6 +1,5 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -23,10 +22,7 @@ const config: Config = {
         sans: ["var(--font-jakarta)", "system-ui", "sans-serif"],
         sinhala: ["var(--font-noto-sinhala)", "sans-serif"],
       },
-      borderRadius: {
-        card: "1.25rem",
-        chip: "999px",
-      },
+      borderRadius: { card: "1.25rem", chip: "999px" },
       boxShadow: {
         soft: "0 8px 24px -8px rgba(43, 38, 32, 0.15)",
         lift: "0 12px 32px -10px rgba(43, 38, 32, 0.22)",
@@ -36,7 +32,7 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateY(8px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        pulse-once: {
+        "pulse-once": {
           "0%": { transform: "scale(1)" },
           "50%": { transform: "scale(1.03)" },
           "100%": { transform: "scale(1)" },
@@ -50,5 +46,3 @@ const config: Config = {
   },
   plugins: [],
 };
-
-export default config;
