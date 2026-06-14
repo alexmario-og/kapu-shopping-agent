@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --tag-hole-size: 14px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #FBF5EC;
+  color: #2B2620;
+}
+
+/* Signature element: every product surface reads as a little market price-tag.
+   A punched "hole" sits in the top-left corner, echoing the Kapruka basket/tag motif
+   without leaning on generic numbered-step or icon-grid layouts. */
+.tag-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 1.25rem;
+  border: 1px solid #EAE2D6;
+}
+
+.tag-card::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: var(--tag-hole-size);
+  height: var(--tag-hole-size);
+  border-radius: 50%;
+  background: #FBF5EC;
+  border: 1px solid #EAE2D6;
+  z-index: 2;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #EAE2D6;
+  border-radius: 999px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
